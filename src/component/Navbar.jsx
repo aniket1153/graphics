@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
-import img1 from '../assets/11Sunirman Logo_.jpg'
+import img1 from '../assets/final.jpg'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +13,26 @@ const Navbar = () => {
       <img src={img1} alt="" className='w-[150px]' />
 
       {/* Desktop Links */}
-      <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <li className="hover:text-orange-500 cursor-pointer">Home</li>
-        <li className="hover:text-red-500 cursor-pointer">About</li>
-        <li className="hover:text-orange-500 cursor-pointer">Services</li>
-        <li className="hover:text-red-500 cursor-pointer">Our Work</li>
-        <li className="hover:text-orange-500 cursor-pointer">Contact Us</li>
-      </ul>
+    <ul className="hidden md:flex space-x-12 text-gray-700 font-bold text-xl">
+  <li className="hover:text-orange-500 hover:underline cursor-pointer">
+    <Link to="/">Home</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/about">About</Link>
+  </li>
+  <li className="hover:text-orange-500 cursor-pointer">
+    <Link to="/services">Services</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/our-work">Our Work</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/ourvision">Our Vision</Link>
+  </li>
+  <li className="hover:text-orange-500 cursor-pointer">
+    <Link to="/contact">Contact Us</Link>
+  </li>
+</ul>
 
       {/* Hamburger Icon */}
       <div className="md:hidden">

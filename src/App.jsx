@@ -11,10 +11,16 @@ import AboutUs from './component/AboutUs'; // assuming AboutUs component exists
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OurVision from './component/OurVision';
+import HeroSection from './component/HeroSection';
+import ServiceCards from './component/ServiceCards';
+import OurServices from './component/OurServices';
+import OurWork from './component/OurWork';
 
 const Home = () => (
   <>
     <ImageSlider />
+    <HeroSection/>
+    < ServiceCards/>
     <AboutUs/>
     <OurWorkSection />
     <Testimonials />
@@ -31,6 +37,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/ourvision" element={<OurVision />} />
+          <Route path='/OurServices' element={<OurServices/>}/>
+              <Route path='/Ourwork' element={<OurWork/>}/>
 
           {/* Add more routes as needed */}
         </Routes>

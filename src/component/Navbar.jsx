@@ -13,21 +13,25 @@ const Navbar = () => {
     { name: 'Services', path: '/OurServices' },
     { name: 'Our Work', path: '/Ourwork' },
     { name: 'Our Vision', path: '/ourvision' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Contact Us', path: '/ContactForm' },
   ];
 
   return (
-    <header className="w-full bg-[#0a1f44] border-b-2 border-[#13294b] shadow-md z-50">
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="w-full bg-[#0a1f44] border-b border-[#13294b] shadow-md fixed top-0 left-0 z-50">
+    <nav className="max-w-[1280px] mx-auto pl-2 sm:pl-4 md:pl-1 pr-4 sm:pr-6 lg:pr-8 py-4 flex items-center justify-between">
+
         
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <img src={img1} alt="Logo" className="h-12 object-contain" />
-          
+        <Link to="/" className="flex items-start gap-3">
+          <img
+            src={img1}
+            alt="Logo"
+            className="h-10 sm:h-12 object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-10 text-white font-medium text-lg">
+        <ul className="hidden md:flex items-center gap-8 text-white font-medium text-base lg:text-lg">
           {navItems.map((item) => (
             <li key={item.name} className="relative group">
               <Link
@@ -43,20 +47,20 @@ const Navbar = () => {
 
         {/* Mobile Icon */}
         <div className="md:hidden text-white">
-          <button onClick={toggleMenu} aria-label="Toggle Menu">
+          <button onClick={toggleMenu} aria-label="Toggle menu">
             {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
           </button>
         </div>
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <ul className="absolute top-[72px] right-6 w-[220px] bg-[#0a1f44] border border-[#1f355f] shadow-lg p-4 space-y-4 rounded-md md:hidden">
+          <ul className="absolute top-full right-4 mt-2 w-[230px] bg-[#0a1f44] border border-[#1f355f] shadow-xl rounded-md p-5 space-y-4 md:hidden">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block text-white hover:text-[#ff8c00] transition duration-200"
+                  className="block text-white font-medium hover:text-[#ff8c00] transition-colors duration-200"
                 >
                   {item.name}
                 </Link>

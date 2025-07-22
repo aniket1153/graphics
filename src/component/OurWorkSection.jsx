@@ -47,8 +47,8 @@ const works = [
 
 const OurWorkSection = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-white to-gray-100">
-      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12 tracking-tight">
+    <section className="py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-gradient-to-br from-white to-gray-100">
+      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-14 tracking-tight">
         Our Work
       </h2>
 
@@ -56,7 +56,7 @@ const OurWorkSection = () => {
         {works.map((work) => (
           <div
             key={work.id}
-            className="relative group w-full h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-white"
+            className="relative group w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 bg-white"
           >
             {/* Background image */}
             <img
@@ -65,17 +65,19 @@ const OurWorkSection = () => {
               className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             />
 
-            {/* Title (visible by default) */}
+            {/* Title layer */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition duration-500">
               <h3 className="text-white text-2xl md:text-3xl font-semibold text-center px-2 drop-shadow-lg">
                 {work.title}
               </h3>
             </div>
 
-            {/* Content on hover */}
-            <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out bg-[#0a1f44] bg-opacity-95 text-white px-6 py-8 flex flex-col justify-center items-center text-center rounded-2xl">
-              <h3 className="text-xl font-bold mb-3">{work.title}</h3>
-              <p className="text-sm leading-relaxed">{work.description}</p>
+            {/* Description overlay on hover */}
+            <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out bg-[#0a1f44]/95 text-white px-6 py-8 flex flex-col justify-center items-center text-center rounded-2xl">
+              <h3 className="text-lg md:text-xl font-bold mb-3">{work.title}</h3>
+              <p className="text-sm md:text-[15px] leading-relaxed max-h-[220px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent pr-2">
+                {work.description}
+              </p>
             </div>
           </div>
         ))}

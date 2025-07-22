@@ -15,6 +15,7 @@ import HeroSection from './component/HeroSection';
 import ServiceCards from './component/ServiceCards';
 import OurServices from './component/OurServices';
 import OurWork from './component/OurWork';
+import ContactForm from './component/ContactForm';
 
 const Home = () => (
   <>
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/ourvision" element={<OurVision />} />
           <Route path='/OurServices' element={<OurServices/>}/>
               <Route path='/Ourwork' element={<OurWork/>}/>
+              <Route path='/ContactForm' element={<ContactForm/>}/>
 
           {/* Add more routes as needed */}
         </Routes>

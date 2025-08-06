@@ -54,32 +54,36 @@ const OurWorkSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {works.map((work) => (
-          <div
-            key={work.id}
-            className="relative group w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 bg-white"
-          >
-            {/* Background image */}
-            <img
-              src={work.image}
-              alt={work.title}
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-            />
+         <div
+  key={work.id}
+  className="relative group w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 bg-white"
+>
+  {/* Image */}
+  <img
+    src={work.image}
+    alt={work.title}
+    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+  />
 
-            {/* Title layer */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition duration-500">
-              <h3 className="text-white text-2xl md:text-3xl font-semibold text-center px-2 drop-shadow-lg">
-                {work.title}
-              </h3>
-            </div>
+  {/* Default Bottom Title + Line */}
+  <div className="absolute bottom-0 left-0 w-full z-20 transition-all duration-500 group-hover:translate-y-full">
+    <div className="bg-[#0a1f44] px-4 py-3 text-white text-center">
+      <h3 className="text-lg md:text-xl font-semibold">{work.title}</h3>
+    </div>
+    <div className="h-[4px] w-full bg-[#0a1f44]" />
+  </div>
 
-            {/* Description overlay on hover */}
-            <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out bg-[#0a1f44]/95 text-white px-6 py-8 flex flex-col justify-center items-center text-center rounded-2xl">
-              <h3 className="text-lg md:text-xl font-bold mb-3">{work.title}</h3>
-              <p className="text-sm md:text-[15px] leading-relaxed max-h-[220px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent pr-2">
-                {work.description}
-              </p>
-            </div>
-          </div>
+  {/* Hover Content Overlay */}
+  <div
+    className="absolute left-0 right-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out bg-[#0a1f44]/95 text-white px-6 py-8 flex flex-col justify-center items-center text-center z-10 h-full"
+  >
+    <h3 className="text-lg md:text-xl font-bold mb-3">{work.title}</h3>
+    <p className="text-sm md:text-[15px] leading-relaxed max-h-[220px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent pr-2">
+      {work.description}
+    </p>
+  </div>
+</div>
+
         ))}
       </div>
     </section>

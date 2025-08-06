@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full bg-[#0a1f44] border-b border-[#13294b] shadow-md fixed top-0 left-0 z-50">
+<header className="w-full fixed top-0 left-0 z-50  overflow-hidden bg-white/15 backdrop-blur-[20px] border-b border-[#13294b] shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_20px_10px_rgba(255,255,255,1)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-px before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)] after:content-[''] after:absolute after:top-0 after:left-0 after:w-px after:h-full after:bg-[linear-gradient(180deg,rgba(255,255,255,0.8),transparent,rgba(255,255,255,0.3))]">
     <nav className="max-w-[1280px] mx-auto pl-2 sm:pl-4 md:pl-1 pr-4 sm:pr-6 lg:pr-8 py-4 flex items-center justify-between">
 
         

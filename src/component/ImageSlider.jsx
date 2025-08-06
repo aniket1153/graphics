@@ -1,32 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import img1 from '../assets/final1.jpg';
 import img2 from '../assets/final2.jpg';
 import img3 from '../assets/final3.jpg';
-
-// Next Arrow
-const NextArrow = ({ onClick }) => (
-  <div
-    className="absolute right-3 sm:right-6 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-[#0a1f44] p-2 sm:p-3 shadow-md rounded-md cursor-pointer transition duration-300"
-    onClick={onClick}
-  >
-    <FaArrowRight size={20} />
-  </div>
-);
-
-// Previous Arrow
-const PrevArrow = ({ onClick }) => (
-  <div
-    className="absolute left-3 sm:left-6 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-[#0a1f44] p-2 sm:p-3 shadow-md rounded-md cursor-pointer transition duration-300"
-    onClick={onClick}
-  >
-    <FaArrowLeft size={20} />
-  </div>
-);
 
 const ImageSlider = () => {
   const settings = {
@@ -38,8 +17,8 @@ const ImageSlider = () => {
     autoplay: true,
     autoplaySpeed: 1500,
     pauseOnHover: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <div />, // hide visible arrow
+    prevArrow: <div />,
     responsive: [
       {
         breakpoint: 768,
@@ -56,8 +35,21 @@ const ImageSlider = () => {
     { id: 3, url: img3, caption: 'Let’s Build Something Great Together' },
   ];
 
+  const handleClick = (e) => {
+    const middle = e.currentTarget.offsetWidth / 2;
+    const sliderRoot = e.currentTarget.closest('.slick-slider');
+
+    if (!sliderRoot) return;
+
+    if (e.clientX < middle) {
+      sliderRoot.querySelector('.slick-prev')?.click();
+    } else {
+      sliderRoot.querySelector('.slick-next')?.click();
+    }
+  };
+
   return (
-    <div className="w-full relative pt-[72px] sm:pt-[80px]">
+    <div className="relative w-full  overflow-hidden pt-[72px] sm:pt-[80px] mb-6">
       <div className="max-w-[1536px] mx-auto">
         <Slider {...settings}>
           {slides.map((slide) => (
@@ -67,7 +59,15 @@ const ImageSlider = () => {
                 alt={`Slide ${slide.id}`}
                 className="w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[620px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12">
+
+              {/* Clickable overlay for navigation */}
+              <div
+                className="absolute inset-0 z-20 cursor-pointer"
+                onClick={handleClick}
+              />
+
+              {/* Caption overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12 z-10">
                 <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-semibold drop-shadow-lg leading-snug max-w-4xl">
                   {slide.caption}
                 </h2>

@@ -67,10 +67,10 @@ const OurWorkSection = () => {
 
   {/* Default Bottom Title + Line */}
   <div className="absolute bottom-0 left-0 w-full z-20 transition-all duration-500 group-hover:translate-y-full">
-    <div className="bg-[#0a1f44] px-4 py-3 text-white text-center">
-      <h3 className="text-lg md:text-xl font-semibold">{work.title}</h3>
+    <div className="bg-[#0a1f44] px-3 py-2 text-white text-center">
+      <h3 className="text-lg md:text-sm font-semibold">{work.title}</h3>
     </div>
-    <div className="h-[4px] w-full bg-[#0a1f44]" />
+    <div className="h-[2px] w-full bg-[#0a1f44]" />
   </div>
 
   {/* Hover Content Overlay */}

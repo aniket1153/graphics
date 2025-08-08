@@ -49,7 +49,7 @@ const OurWorkSection = () => {
   return (
     <section className="py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-gradient-to-br from-white to-gray-100">
       <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-14 tracking-tight">
-        Our Work
+        Our Creation
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">

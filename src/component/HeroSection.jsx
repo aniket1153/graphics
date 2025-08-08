@@ -1,5 +1,6 @@
 import React from 'react';
 import TextType from './TextType';
+import CountingNumber from './CountingNumber';
 
 const HeroSection = () => {
   return (
@@ -22,6 +23,13 @@ const HeroSection = () => {
             textColors={["#ffffff", "#FFA500"]}
           />
         </h1>
+           <h1 className="text-white text-6xl font-bold leading-snug mb-6">
+          <CountingNumber max={101} interval={20} />
+        </h1>
+<p className="text-gray-300 text-base sm:text-lg md:text-xl font-medium max-w-3xl mx-auto pt-1 pb-2">   We fill the colour in your happy life <span className='text-orange-300'>||</span></p>
+       
+       
+       
         <p className="text-gray-300 text-base sm:text-lg md:text-xl font-medium max-w-3xl mx-auto">
           Trusted by 60+ clients for impactful and creative printing solutions.
         </p>

@@ -15,7 +15,7 @@ const ImageSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 1400,
     pauseOnHover: true,
     nextArrow: <div />, // hide visible arrow
     prevArrow: <div />,

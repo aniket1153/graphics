@@ -17,6 +17,10 @@ import OurServices from './component/OurServices';
 import OurWork from './component/OurWork';
 import ContactForm from './component/ContactForm';
 
+import ItemDetailPage from './component/ItemDetailPage';
+import CardDetailPage from './component/CardDetailPage';
+import Gallery from './component/Gallery';
+
 const Home = () => (
   <>
     <ImageSlider />
@@ -41,6 +45,10 @@ const App = () => {
           <Route path='/OurServices' element={<OurServices/>}/>
               <Route path='/Ourwork' element={<OurWork/>}/>
               <Route path='/ContactForm' element={<ContactForm/>}/>
+                <Route path="/items/:itemName" element={<ItemDetailPage />} />
+                 <Route path="/Gallery" element={<Gallery/>} />
+                       <Route path="/items/:itemName/cards/:cardId" element={<CardDetailPage />} />
+                       
 
           {/* Add more routes as needed */}
         </Routes>

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import img1 from '../assets/profilepage1.jpg';
+import img1 from '../assets/profilepage2.jpg';
 import img2 from '../assets/final2.jpg';
 import img3 from '../assets/final3.jpg';
 
@@ -49,7 +49,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden pt-[72px] sm:pt-[80px] mb-6">
+   <div className="relative w-full overflow-hidden pt-[72px] sm:pt-[80px] mb-6">
   <div className="w-full mx-auto">
     <Slider {...settings}>
       {slides.map((slide) => (
@@ -57,7 +57,13 @@ const ImageSlider = () => {
           <img
             src={slide.url}
             alt={`Slide ${slide.id}`}
-            className="w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[700px] xl:h-[800px] object-cover"
+            className="w-full 
+              h-[350px] 
+              sm:h-[450px] 
+              md:h-[500px] 
+              lg:h-[550px] 
+              xl:h-[600px] 
+              object-cover"
           />
 
           {/* Clickable overlay for navigation */}
@@ -77,6 +83,7 @@ const ImageSlider = () => {
     </Slider>
   </div>
 </div>
+
 
   );
 };

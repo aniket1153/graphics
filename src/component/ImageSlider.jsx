@@ -62,7 +62,7 @@ const ImageSlider = () => {
               sm:h-[450px] 
               md:h-[500px] 
               lg:h-[550px] 
-              xl:h-[600px] 
+              xl:h-[730px] 
               object-cover"
           />
 
@@ -73,11 +73,11 @@ const ImageSlider = () => {
           />
 
           {/* Caption overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12 z-10">
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12 z-10">
             <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-semibold drop-shadow-lg leading-snug max-w-4xl">
               {slide.caption}
             </h2>
-          </div>
+          </div> */}
         </div>
       ))}
     </Slider>

@@ -4,8 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import img1 from '../assets/profilepage2.jpg';
-import img2 from '../assets/final2.jpg';
-import img3 from '../assets/final3.jpg';
+import img2 from '../assets/profilepage3.jpg';
+import img3 from '../assets/profilepage4.jpg';
+import img4 from '../assets/profilepage1.jpg';
 
 const ImageSlider = () => {
   const settings = {
@@ -33,6 +34,7 @@ const ImageSlider = () => {
     { id: 1, url: img1, caption: 'We design what you imagine' },
     { id: 2, url: img2, caption: 'Creative, Clean & Modern' },
     { id: 3, url: img3, caption: 'Let’s Build Something Great Together' },
+   
   ];
 
   const handleClick = (e) => {
@@ -61,8 +63,8 @@ const ImageSlider = () => {
               h-[350px] 
               sm:h-[450px] 
               md:h-[500px] 
-              lg:h-[550px] 
-              xl:h-[730px] 
+              lg:h-[510px] 
+              xl:h-[700px] 
               object-cover"
           />
 

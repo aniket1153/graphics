@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import img1 from '../assets/final1.jpg';
+import img1 from '../assets/profilepage1.jpg';
 import img2 from '../assets/final2.jpg';
 import img3 from '../assets/final3.jpg';
 
@@ -49,34 +49,35 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="relative w-full  overflow-hidden pt-[72px] sm:pt-[80px] mb-6">
-      <div className="max-w-[1536px] mx-auto">
-        <Slider {...settings}>
-          {slides.map((slide) => (
-            <div key={slide.id} className="relative">
-              <img
-                src={slide.url}
-                alt={`Slide ${slide.id}`}
-                className="w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[620px] object-cover"
-              />
+    <div className="relative w-full overflow-hidden pt-[72px] sm:pt-[80px] mb-6">
+  <div className="w-full mx-auto">
+    <Slider {...settings}>
+      {slides.map((slide) => (
+        <div key={slide.id} className="relative">
+          <img
+            src={slide.url}
+            alt={`Slide ${slide.id}`}
+            className="w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[700px] xl:h-[800px] object-cover"
+          />
 
-              {/* Clickable overlay for navigation */}
-              <div
-                className="absolute inset-0 z-20 cursor-pointer"
-                onClick={handleClick}
-              />
+          {/* Clickable overlay for navigation */}
+          <div
+            className="absolute inset-0 z-20 cursor-pointer"
+            onClick={handleClick}
+          />
 
-              {/* Caption overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12 z-10">
-                <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-semibold drop-shadow-lg leading-snug max-w-4xl">
-                  {slide.caption}
-                </h2>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
+          {/* Caption overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 sm:px-10 pb-8 sm:pb-12 z-10">
+            <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-semibold drop-shadow-lg leading-snug max-w-4xl">
+              {slide.caption}
+            </h2>
+          </div>
+        </div>
+      ))}
+    </Slider>
+  </div>
+</div>
+
   );
 };
 
